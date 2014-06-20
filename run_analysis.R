@@ -54,6 +54,7 @@ setwd("C:\\Users\\a0196320\\Documents\\training\\R\\Coursera")
   for (i in 1:nrow(keepvar)){
       keepvar[i,"V2"] <- gsub("\\(\\)", "", keepvar[i,"V2"])
       keepvar[i,"V2"] <- gsub("-", ".", keepvar[i,"V2"])
+      keepvar[i,"V2"] <- gsub("BodyBody", "Body", keepvar[i,"V2"])
       keepvar[i,"V3"] <- paste("V",keepvar[i,"V1"],sep="")
       names(alldata)[names(alldata)==keepvar[i,"V3"]] <- keepvar[i,"V2"]   
   }
